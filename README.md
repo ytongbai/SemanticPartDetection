@@ -25,12 +25,13 @@ Please refer to these websites for details of data preparation.
 
 - need to install MATLAB
 
-- clone this repo: `git clone https://github.com/zhirongw/lemniscate.pytorch.git`
+- clone this repo: `git clone https://github.com/ytongbai/SemanticPartDetection.git`
 
 - Pipeline: 
 For both training and testing stage:
   - Generate synthetic data. 
   - Get training images from different viewpoints. 
+  
   `python get_vp_examples.py`, `python assign_synthetic_img.py `
   - Extract features from ImageNet pretrained VGG-16 Network.  
   `python extractLayerFeat.py`
