@@ -13,11 +13,8 @@ This repo constains the pytorch implementation for the ICCV2019: Semantic Part D
 ```
 
 ## Highlight
-
 - We present an approach which can learn from a small annotated dataset containing a limited range of viewpoints and generalize to detect semantic parts for a much larger range of viewpoints. 
 - The approach is based on our matching algorithm, which is used for finding accurate spatial correspondence between two images and transplanting semantic parts annotated on one image to the other.
-
-
 
 ## Usage
 Our code uses PyTorch to implement. 
@@ -30,14 +27,16 @@ Please refer to these websites for details of data preparation.
 
 - clone this repo: `git clone https://github.com/zhirongw/lemniscate.pytorch.git`
 
-- Pipeline:
-
-  - Generate synthetic data.
-  - Get training images from different viewpoints.
-  - Extract features from ImageNet pretrained VGG-16 Network.
-  - Use maximal clique algorithm to conduct the matching stage.
-  - Calculate mAP score.
-
+- Pipeline: 
+For both training and testing stage:
+  - Generate synthetic data. `python get_vp_examples_test.py`
+  - Get training images from different viewpoints. `python assign_synthetic_img.py `
+  - Extract features from ImageNet pretrained VGG-16 Network.  `python extractLayerFeat.py`
+  - Data format change to MATLAB. `python featPickle2featCell.py`
+  - Use maximal clique algorithm to conduct the matching stage. `bash MaximalCliqueAlgorithm/run_per_folder.sh`
+  - Use feature extracted from pool-3 layer from ImageNet Pretrained VGG-16 to refine. `python refine_pool3.py` 
+  - Aggregate 2D parts to 3D CAD model.`python aggregate_3d_wPars.py`,`solve_nearest_score.py`
+  - Calculate mAP score. `python calculate_mAP.py`
 
 ## Contact
 
