@@ -31,8 +31,8 @@ Please refer to these websites for details of data preparation.
 For both training and testing stage:
   - Generate synthetic data. 
   - Get training images from different viewpoints. 
-  
-  `python get_vp_examples.py`, `python assign_synthetic_img.py `
+
+    `python get_vp_examples.py`, `python assign_synthetic_img.py `
   - Extract features from ImageNet pretrained VGG-16 Network.  
   `python extractLayerFeat.py`
   - Data format change to MATLAB. 
