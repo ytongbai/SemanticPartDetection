@@ -34,16 +34,23 @@ For both training and testing stage:
 
     `python get_vp_examples.py`, `python assign_synthetic_img.py `
   - Extract features from ImageNet pretrained VGG-16 Network.  
-  `python extractLayerFeat.py`
+    
+    `python extractLayerFeat.py`
   - Data format change to MATLAB. 
-  `python featPickle2featCell.py`
+    
+    `python featPickle2featCell.py`
   - Use maximal clique algorithm to conduct the matching stage. 
-  `bash MaximalCliqueAlgorithm/run_per_folder.sh`
+    
+    `bash MaximalCliqueAlgorithm/run_per_folder.sh`
   - Use feature extracted from pool-3 layer from ImageNet Pretrained VGG-16 to refine. 
-  `python refine_pool3.py` 
+    
+    `python refine_pool3.py` 
   - Aggregate 2D parts to 3D CAD model.
-  `python aggregate_3d_wPars.py`,`python solve_nearest_score.py`
-  - Calculate mAP score. `python calculate_mAP.py`
+    
+    `python aggregate_3d_wPars.py`,`python solve_nearest_score.py`
+  - Calculate mAP score. 
+    
+    `python calculate_mAP.py`
 
 ## Contact
 
